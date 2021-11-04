@@ -1,11 +1,12 @@
 from mysql.connector import connect
 
 # Connect to the database
+# Double underscore means private. Means that it cannot be imported
 __db = connect(
   host="sigma.jasoncoding.com",
   user="alpha",
   password="bestdatabase",
-  database="classicmodels",
+  database="goblin_db",
   port=5555
 )
 
