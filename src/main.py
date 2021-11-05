@@ -1,8 +1,9 @@
 from db import getDb
 from state import state
-from api.forumapi import create_topic
+from api.forumapi import get_messages_topic
 
-create_topic("GDSC", 9)
+print(get_messages_topic(1))
+
 
 # while True:
 #   print("Welcome to goblin! Select your menu")
