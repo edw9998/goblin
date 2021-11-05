@@ -1,8 +1,8 @@
 from db import getDb
 from state import state
-from api.userapi import register_user, login_user
+from api.forumapi import create_topic
 
-print(login_user("notgood", "jkfla;jkfl;ajfkalsfjas"))
+create_topic("GDSC", 9)
 
 # while True:
 #   print("Welcome to goblin! Select your menu")
