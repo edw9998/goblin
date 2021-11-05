@@ -1,8 +1,8 @@
 from db import getDb
 from state import state
-from api.userapi import register_user
+from api.userapi import register_user, login_user
 
-register_user("notgood", "blablablabla")
+print(login_user("notgood", "jkfla;jkfl;ajfkalsfjas"))
 
 # while True:
 #   print("Welcome to goblin! Select your menu")
