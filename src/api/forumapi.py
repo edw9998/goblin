@@ -1,5 +1,6 @@
 from db import getDb
 import time
+import mysql.connector
 
 
 def create_topic(topic_name, user_id):
@@ -17,9 +18,9 @@ def create_topic(topic_name, user_id):
         values = (topic_name, user_id, time.strftime('%Y-%m-%d %H:%M:%S'))
         cursor.execute(query, values)
         db.commit()
-    except:
+    except(mysql.connector.Error) as e:
         # Handle topic name too long, print
-        pass
+        print(e)
 
 
 def get_topics():
