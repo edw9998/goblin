@@ -1,4 +1,4 @@
-from db import getDb
+from db import getDb, getError
 import time
 
 
@@ -17,8 +17,8 @@ def create_topic(topic_name, user_id):
         values = (topic_name, user_id, time.strftime('%Y-%m-%d %H:%M:%S'))
         cursor.execute(query, values)
         db.commit()
-    except:
-        # Handle topic name too long, print
+    except getError() as err:
+        print("Something went wrong: {}".format(err))
         pass
 
 
@@ -55,5 +55,6 @@ def add_message_topic(topic_id, user_id, msg):
         values = (msg, time.strftime('%Y-%m-%d %H:%M:%S'), user_id, topic_id)
         cursor.execute(query, values)
         db.commit()
-    except:
+    except getError() as err:
+        print("Something went wrong: {}".format(err))
         pass

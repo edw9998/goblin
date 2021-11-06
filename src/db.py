@@ -1,4 +1,5 @@
 from mysql.connector import connect
+import mysql.connector
 
 # Connect to the database
 # Double underscore means private. Means that it cannot be imported
@@ -15,3 +16,6 @@ def getDb():
   if not __db.is_connected():
     __db.reconnect()
   return __db
+
+def getError():
+  return mysql.connector.Error
