@@ -9,10 +9,6 @@ def create_topic(topic_name, user_id):
     db = getDb()
     cursor = db.cursor()
 
-    # Try because code can throw error. Must handle it in except but we dont handle lol
-    # SCORE_TODO: Anyone who can fill except with proper handling code gets 100
-    # Pull request in GitHub
-    # Requirements: The except code has to handle ONLY MYSQL ERRORS
     try:
         query = "INSERT INTO topics (name, userId, dateCreated) VALUES (%s, %s, %s);"
         values = (topic_name, user_id, time.strftime('%Y-%m-%d %H:%M:%S'))
@@ -48,9 +44,6 @@ def add_message_topic(topic_id, user_id, msg):
     db = getDb()
     cursor = db.cursor()
 
-    # SCORE_TODO: Anyone who can fill except with proper handling code gets 100
-    # MUST PULL REQUEST
-    # Requirements: The except code has to handle ONLY MYSQL ERRORS
     try:
         query = "INSERT INTO messages (content, dateCreated, userId, topicId) VALUES (%s, %s, %s, %s)"
         values = (msg, time.strftime('%Y-%m-%d %H:%M:%S'), user_id, topic_id)
