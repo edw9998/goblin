@@ -3,6 +3,13 @@ from bcrypt import gensalt, hashpw, checkpw
 
 
 def register_user(username, password: str):
+    """Registers the user in the database with the specified parameters.
+    Password will be hashed using the bcrypt library and put in the database.
+
+    Args:
+        username (str): Username of the user
+        password (str): Password of the user
+    """
     db = getDb()
     cursor = db.cursor()
 
@@ -17,11 +24,12 @@ def register_user(username, password: str):
 
 
 def login_user(username, password):
-    """Returns if the user is correct
+    """Checks the credentials of the inserted parameters in the database and
+    returns the user id if the credentials are correct.
 
     Args:
-        username (str): Username
-        password (str): Password
+        username (str): Username of the user
+        password (str): Password of the user
 
     Returns:
         False: If the credentials are wrong
