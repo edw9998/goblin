@@ -4,6 +4,7 @@ from api.forumapi import get_messages_topic
 from views.exit import exit_view
 from views.logout import logout_view
 from views.register import register_view
+from views.login import login_view
 
 while True:
   print("Welcome to Goblin")
@@ -16,16 +17,16 @@ while True:
     if opt == "1":
       register_view()
     elif opt == "2":
-      pass
+      login_view(state)
     elif opt == "3":
       exit_view()
     else:
       print("Wrong number, enter again")
     
   else:
-    print("1. topics")
-    print("2. logout")
-    print("3. exit")
+    print("1. Topics")
+    print("2. Logout")
+    print("3. Exit")
     opt = input("Select a number: ")
     if opt == "1":
       pass
