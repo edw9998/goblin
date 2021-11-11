@@ -23,7 +23,7 @@ def get_topics():
     """Gets all of the topics in the database"""
     db = getDb()
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM topics;")
+    cursor.execute("SELECT t.id, name, dateCreated, username FROM topics AS t JOIN users AS u ON t.userId=u.id;")
     return cursor.fetchall()
 
 

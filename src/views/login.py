@@ -7,8 +7,9 @@ def login_view(state):
   
   res = login_user(name, pwd)
   
-  if res:
+  if res != False:
     print("You are logged in!")
     state["logged_in"] = True
+    state["user_id"] = res
   else:
     print("Wrong credentials")

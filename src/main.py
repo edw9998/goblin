@@ -5,6 +5,7 @@ from views.exit import exit_view
 from views.logout import logout_view
 from views.register import register_view
 from views.login import login_view
+from views.topics import topics_view
 
 while True:
   print("Welcome to Goblin")
@@ -29,7 +30,7 @@ while True:
     print("3. Exit")
     opt = input("Select a number: ")
     if opt == "1":
-      pass
+      topics_view(state)
     elif opt == "2":
       logout_view(state)
     elif opt == "3":

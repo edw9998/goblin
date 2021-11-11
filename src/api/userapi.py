@@ -24,12 +24,13 @@ def login_user(username, password):
         password (str): Password
 
     Returns:
-        bool: Whether the user credentials are correct
+        False: If the credentials are wrong
+        int: If the credentials are right, return user id
     """
     db = getDb()
     cursor = db.cursor()
 
-    query = "SELECT password FROM users WHERE username=%s;"
+    query = "SELECT password, id FROM users WHERE username=%s;"
     # Brackets are important! It only accepts tuple
     cursor.execute(query, (username, ))
     
@@ -38,4 +39,5 @@ def login_user(username, password):
         return False
 
     hashed_pass = res[0]
-    return checkpw(str.encode(password), str.encode(hashed_pass))
+    id = res[1]
+    return id if checkpw(str.encode(password), str.encode(hashed_pass)) else False
