@@ -3,6 +3,7 @@ from state import state
 from api.forumapi import get_messages_topic
 from views.exit import exit_view
 from views.logout import logout_view
+from views.register import register_view
 
 while True:
   print("Welcome to Goblin")
@@ -11,9 +12,9 @@ while True:
     print("1. Register")
     print("2. Login")
     print("3. Exit")
-    opt = input("Select a number:")
+    opt = input("Select a number: ")
     if opt == "1":
-      pass
+      register_view()
     elif opt == "2":
       pass
     elif opt == "3":
@@ -25,7 +26,7 @@ while True:
     print("1. topics")
     print("2. logout")
     print("3. exit")
-    opt = input("Select a number:")
+    opt = input("Select a number: ")
     if opt == "1":
       pass
     elif opt == "2":
@@ -34,3 +35,5 @@ while True:
       exit_view()
     else:
       print("Wrong number, enter again")
+  
+  print()
