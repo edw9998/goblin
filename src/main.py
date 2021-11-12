@@ -5,10 +5,12 @@ from views.logout import logout_view
 from views.register import register_view
 from views.login import login_view
 from views.topics import topics_view
+from util import print_sep
 
 # Main loop for the program. It keeps repeating menus until the program
 # is quit
 while True:
+  print_sep()
   print("Welcome to Goblin")
   
   # Here, we have 2 separate menus. The first menu is displayed when the user

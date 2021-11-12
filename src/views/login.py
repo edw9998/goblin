@@ -1,7 +1,9 @@
-from util import validate_input, check_name, check_password
+from util import validate_input, check_name, check_password, print_sep
 from api.userapi import login_user
 
 def login_view(state):
+  print_sep()
+  
   # Asks for the username and password
   name = validate_input("Enter your username: ", check_name)
   pwd = validate_input("Enter your password: ", check_password)

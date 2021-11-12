@@ -1,10 +1,11 @@
 from api.forumapi import get_messages_topic, add_message_topic
-from util import validate_input
+from util import validate_input, print_sep
 
 def forum_view(state, topicid):
   # Will continue looping so that the user can continue to send messages
   # until it is broken by the `\quit` command
   while True:
+    print_sep()
     msgs = get_messages_topic(topicid)
     
     if len(msgs) == 0:

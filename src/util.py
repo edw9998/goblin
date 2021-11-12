@@ -68,3 +68,8 @@ def check_password(msg):
       number_there = True
       
   return number_there
+
+def print_sep():
+  """Prints a separator
+  """
+  print("==========================================================")

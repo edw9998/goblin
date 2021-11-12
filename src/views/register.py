@@ -1,7 +1,8 @@
-from util import validate_input, check_name, check_password
+from util import validate_input, check_name, check_password, print_sep
 from api.userapi import register_user
 
 def register_view():
+  print_sep()
   # Asks for the username
   name = validate_input("Register your username: ", check_name)
   print(f"your username is {name}")

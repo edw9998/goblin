@@ -1,8 +1,9 @@
 from api.forumapi import get_topics, create_topic
 from views.forum import forum_view
-from util import validate_input
+from util import validate_input, print_sep
 
 def topics_view(state):
+  print_sep()
   print("List of topics:")
   # List of topics
   topics = get_topics()
