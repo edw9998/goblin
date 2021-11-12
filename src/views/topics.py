@@ -29,13 +29,17 @@ def topics_view(state):
     
     # Search if there is an associated topic id inputted by the user that
     # is gotten from the database.
+    found = False
     for topic in topics:
       if choice == topic[0]:
         # Go to the forum view
+        found = True
         print(f"Going to forum {topic[1]}")
         forum_view(state, topic[0])
-      else:
-        print("Topic ID does not exist!")
+      
+    if not found:
+      print(f"Topic ID {choice} does not exist!")
+
   else:
     create_topic(choice, state["user_id"])
     print(f"Created topic {choice}!")
