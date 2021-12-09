@@ -1,6 +1,7 @@
 import flask
 from flask import request
 import backend.api.forumapi as api
+import backend.decorators as decs
 
 forum_bl = flask.Blueprint("forum", __name__)
 
@@ -18,12 +19,14 @@ def get_messages(id):
   return flask.jsonify(api.get_messages_topic(id))
 
 @forum_bl.route("/topics", methods=["POST"])
+@decs.auth_required
 def create_topic():
   req = request.get_json(force=True)
   api.create_topic(req["topic"], req["id"])
   return "Success!"
 
 @forum_bl.route("/topics/<id>/message", methods=["POST"])
+@decs.auth_required
 def create_message(id):
   """Creates a new message in the specified topic by `id`
 
