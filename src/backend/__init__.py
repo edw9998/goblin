@@ -1,4 +1,5 @@
 import flask
+from backend.routes.forum import forum_bl
 
 app = flask.Flask(__name__)
 
@@ -6,6 +7,4 @@ app = flask.Flask(__name__)
 def hello():
   return 'fjdafsda;'
 
-@app.route('/movies')
-def movie():
-  return 'I am movie man man'
+app.register_blueprint(forum_bl, url_prefix="/forum")

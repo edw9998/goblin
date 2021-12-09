@@ -1,4 +1,4 @@
-from db import getDb, getError
+from backend.db import getDb, getError
 import time
 import mysql.connector
 
