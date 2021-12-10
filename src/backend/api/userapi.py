@@ -1,4 +1,4 @@
-from db import getDb
+from backend.db import getDb
 from bcrypt import gensalt, hashpw, checkpw
 
 
