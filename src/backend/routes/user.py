@@ -6,7 +6,7 @@ import time
 
 """Do logins and registers"""
 
-_secret = "fds2afdh5xvyuc8xbnbm"
+JWT_SECRET = "fds2afdh5xvyuc8xbnbm"
 EXPIRE_IN = 60 * 60 * 24 * 3 # Expires in 3 days
 user_bl = flask.Blueprint("user", __name__)
 
@@ -29,6 +29,7 @@ def login_user():
         "iat": time.time(),
         "exp": time.time() + EXPIRE_IN,
       },
-      _secret
+      JWT_SECRET,
+      algorithm="HS256"
     )
     return flask.jsonify(token)
