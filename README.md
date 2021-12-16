@@ -6,7 +6,8 @@ This is the greatest nano forum application of all time.
 - MySQL Connector
 - Bcrypt
 - Flask
-- Pyjwt
+- PyJWT
+- requests
 
 ## Usage
 
@@ -19,3 +20,6 @@ Activate environment
 ```bash
 venv/Scripts/activate
 ```
+
+## Better things that could be done:
+- 
