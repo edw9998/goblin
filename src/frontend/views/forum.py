@@ -30,5 +30,5 @@ def forum_view(state, topicid):
     if inp == "\\quit":
       break
     else:
-      add_message_topic(topicid, state["user_id"], inp)
+      add_message_topic(topicid, state["user_id"], inp, state["token"])
       print("Succesfully sent a message!")

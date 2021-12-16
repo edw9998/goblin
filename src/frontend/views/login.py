@@ -1,3 +1,5 @@
+import base64
+import json
 from util import validate_input, check_name, check_password, print_sep
 from api.userapi import login_user
 
@@ -17,6 +19,8 @@ def login_view(state):
   if res != False:
     print("You are logged in!")
     state["logged_in"] = True
-    state["user_id"] = res
+    state["token"] = res
+    user_json = base64.b64decode(res.split(".")[1] + "==").decode("ascii")
+    state["user_id"] = json.loads(user_json)["sub"]
   else:
     print("Wrong credentials")

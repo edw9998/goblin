@@ -1,4 +1,3 @@
-from db import getDb
 from state import state
 from views.exit import exit_view
 from views.logout import logout_view

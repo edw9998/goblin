@@ -42,5 +42,5 @@ def topics_view(state):
       print(f"Topic ID {choice} does not exist!")
 
   else:
-    create_topic(choice, state["user_id"])
+    create_topic(choice, state["user_id"], state["token"])
     print(f"Created topic {choice}!")

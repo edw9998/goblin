@@ -3,3 +3,4 @@ def logout_view(state):
   # Changing the menu.
   print("Logging out...")
   state["logged_in"] = False
+  state["token"] = None
