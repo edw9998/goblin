@@ -1,8 +1,11 @@
 import requests as r
+import os
+
+ROOT_URL = os.getenv("ROOTURL", "http://127.0.0.1:5000")
 
 def register_user(name, pwd):
   res = r.post(
-    "http://127.0.0.1:5000/register",
+    ROOT_URL + "/register",
     json={
       "username": name,
       "password": pwd,
@@ -14,7 +17,7 @@ def register_user(name, pwd):
   
 def login_user(name, pwd):
   res = r.post(
-    "http://127.0.0.1:5000/login",
+    ROOT_URL + "/login",
     json={
       "username": name,
       "password": pwd,
