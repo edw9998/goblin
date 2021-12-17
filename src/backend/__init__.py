@@ -1,6 +1,10 @@
 import flask
 from backend.routes.forum import forum_bl
 from backend.routes.user import user_bl
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv()
 
 app = flask.Flask(__name__)
 

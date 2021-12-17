@@ -3,10 +3,11 @@ from flask import request
 import backend.api.userapi as api
 import jwt
 import time
+import os
 
 """Do logins and registers"""
 
-JWT_SECRET = "fds2afdh5xvyuc8xbnbm"
+JWT_SECRET = os.getenv("JWT_SECRET", "testing")
 EXPIRE_IN = 60 * 60 * 24 * 3 # Expires in 3 days
 user_bl = flask.Blueprint("user", __name__)
 
