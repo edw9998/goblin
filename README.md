@@ -21,5 +21,9 @@ Activate environment
 venv/Scripts/activate
 ```
 
+```bash
+python -m pip install -r requirements.txt
+```
+
 ## Better things that could be done:
 - 

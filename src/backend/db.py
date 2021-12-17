@@ -1,5 +1,6 @@
 from mysql.connector import connect
 import mysql.connector
+import os
 
 # Connect to the database
 # Double underscore means private. Means that it cannot be imported from this
@@ -9,11 +10,11 @@ import mysql.connector
 # database is the initial database that you want to start with
 # Port is the port of the server in which MySQL server listens to
 __db = connect(
-  host="sigma.jasoncoding.com",
-  user="alpha",
-  password="bestdatabase",
-  database="goblin_db",
-  port=5555
+  host=os.getenv("SQLHOST"),
+  user=os.getenv("SQLUSER"),
+  password=os.getenv("SQLPASS"),
+  database=os.getenv("SQLDATABASE"),
+  port=os.getenv("SQLPORT")
 )
 
 # Simple logic that will reconnect the sql connection object if the
