@@ -1,12 +1,15 @@
 import requests as r
+import os
+
+ROOT_URL = os.getenv("ROOTURL", "http://127.0.0.1:5000")
 
 def get_topics():
-  res = r.get("http://127.0.0.1:5000/forum/topics")
+  res = r.get(ROOT_URL + "/forum/topics")
   return res.json()
 
 def create_topic(name, user_id, token):
   res = r.post(
-    "http://127.0.0.1:5000/forum/topics",
+    ROOT_URL + "/forum/topics",
     json={
       "topic": name,
       "id": user_id
@@ -19,12 +22,12 @@ def create_topic(name, user_id, token):
     raise Exception("Error creating a topic!")
   
 def get_messages_topic(topicid):
-  res = r.get(f"http://127.0.0.1:5000/forum/topics/{topicid}/message")
+  res = r.get(ROOT_URL + f"/forum/topics/{topicid}/message")
   return res.json()
 
 def add_message_topic(topicid, userid, msg, token):
   res = r.post(
-    f"http://127.0.0.1:5000/forum/topics/{topicid}/message",
+    ROOT_URL + f"/forum/topics/{topicid}/message",
     json={
       "msg": msg,
       "userId": userid

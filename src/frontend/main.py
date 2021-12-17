@@ -1,3 +1,8 @@
+from dotenv import load_dotenv, dotenv_values
+# Load .env file
+
+load_dotenv()
+
 from state import state
 from views.exit import exit_view
 from views.logout import logout_view
