@@ -7,11 +7,18 @@ forum_bl = flask.Blueprint("forum", __name__)
 
 @forum_bl.route("/topics")
 def get_topics():
+  """Gets all the topics in the server
+
+  Returns:
+      [arr]: Array of topics
+  """
   return flask.jsonify(api.get_topics())
 
 @forum_bl.route("/topics/<id>/message", methods=["GET"])
 def get_messages(id):
   """Gets all the messages associated with the topic id specified
+  
+  id: forum topic id
 
   Args:
       id (str): Topic id
@@ -21,6 +28,15 @@ def get_messages(id):
 @forum_bl.route("/topics", methods=["POST"])
 @decs.auth_required
 def create_topic():
+  """Creates a topic in the program. Needs:
+  {
+    topic: str, # topic id
+    id: int # user id
+  }
+
+  Returns:
+      str: If the operation is a success
+  """
   req = request.get_json(force=True)
   api.create_topic(req["topic"], req["id"])
   return "Success!"
@@ -28,7 +44,13 @@ def create_topic():
 @forum_bl.route("/topics/<id>/message", methods=["POST"])
 @decs.auth_required
 def create_message(id):
-  """Creates a new message in the specified topic by `id`
+  """Creates a new message in the specified topic by `id`. Needs:
+  {
+    userId: int, # User id
+    msg: str, # Msg id
+  }
+  
+  id: forum topic id
 
   Args:
       id (str): Topic id

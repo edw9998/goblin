@@ -9,6 +9,8 @@ import os
 # User is the MySQL user
 # database is the initial database that you want to start with
 # Port is the port of the server in which MySQL server listens to
+
+# So that our secrets are not exposed, we use environment variables now :')
 __db = connect(
   host=os.getenv("SQLHOST"),
   user=os.getenv("SQLUSER"),

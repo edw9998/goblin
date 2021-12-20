@@ -1,6 +1,9 @@
 from dotenv import load_dotenv, dotenv_values
-# Load .env file
 
+# Loads .env file. Remember to rename .env.example file to .env and fill it
+# with appropriate information. Read more in README.md
+
+# This will read the .env file in the root directory of goblin
 load_dotenv()
 
 from state import state
