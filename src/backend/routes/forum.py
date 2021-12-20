@@ -58,3 +58,7 @@ def create_message(id):
   req = request.get_json(force=True)
   api.add_message_topic(id, req["userId"], req["msg"])
   return "Success!"
+
+# For delete routes, use the "DELETE" HTTP method
+############# ! Challenge: Create a delete route for a message!
+############# ! Challenge: Create a delete route for a topic (Along with its messages)!

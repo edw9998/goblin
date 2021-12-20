@@ -11,7 +11,7 @@ import os
 JWT_SECRET = os.getenv("JWT_SECRET", "testing")
 
 # When will the token will expire (You can modify this!)
-EXPIRE_IN = 60 * 60 * 24 * 3 # Expires in 3 days #########!Challenge: Make this a environment variable in the env example file and do your best to comment it there!
+EXPIRE_IN = 60 * 60 * 24 * 3 # Expires in 3 days ######### !Challenge: Make this a environment variable in the env example file and do your best to comment it there!
 
 user_bl = flask.Blueprint("user", __name__)
 
