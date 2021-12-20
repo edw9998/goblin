@@ -35,6 +35,14 @@ fill the backend section. If only frontend, only fill the frontend section.)
 
 5b. For frontend, run the program by executing the `src/frontend.main.py` file.
 
+## Deploying on our web server
+To deploy your backend to our web server, reference this tutorial:
+https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04
+
+For the credentials and how to login to our server, take a look at the TA
+Google Drive! (Because the password is there, I don't include it here. DM me
+or look in the CS 2024 group)
+
 ## Better things that could be done:
 - Don't use mysql-connector. Use Flask-MySQL. This will provide a better output
 for SQL queries instead or array in arrays.
