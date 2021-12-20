@@ -43,6 +43,9 @@ For the credentials and how to login to our server, take a look at the TA
 Google Drive! (Because the password is there, I don't include it here. DM me
 or look in the CS 2024 group)
 
+## How JWT authentication works:
+https://www.akana.com/blog/what-is-jwt
+
 ## Better things that could be done:
 - Don't use mysql-connector. Use Flask-MySQL. This will provide a better output
 for SQL queries instead or array in arrays.
