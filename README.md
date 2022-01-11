@@ -47,6 +47,9 @@ or look in the CS 2024 group)
 https://www.akana.com/blog/what-is-jwt
 
 ## Better things that could be done:
+- I've recently seen more and more projects use the `fastapi` library as a flask
+alternative in python. From what i've seen it's newer and more performant.
+Maybe it's better?
 - Don't use mysql-connector. Use Flask-MySQL. This will provide a better output
 for SQL queries instead or array in arrays.
 - While you're at it, you can study how does flask templates work. It allows you
